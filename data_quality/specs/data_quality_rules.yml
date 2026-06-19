@@ -1,0 +1,1073 @@
+# 数据质量评价规则库
+# 依据《GB/T 36344-2018 信息技术 数据质量评价指标》国家标准
+# 
+# 评价维度体系权重：
+# - 规范性 (Normativity): 20%
+# - 完整性 (Completeness): 20%
+# - 准确性 (Accuracy): 15%
+# - 一致性 (Consistency): 15%
+# - 时效性 (Timeliness): 15%
+# - 可访问性 (Accessibility): 15%
+
+version: "1.0"
+description: "企业级数据质量评价规则库"
+
+# ============================================================================
+# 一、规范性维度 (Normativity) - 权重: 20%
+# 定义：数据符合既定数据标准、数据模型、业务规则、元数据规范及权威参考数据的程度
+# ============================================================================
+normativity:
+  displayName: "规范性"
+  weight: 0.20
+  description: "数据符合既定数据标准、数据模型、业务规则、元数据规范及权威参考数据的程度"
+  
+  subDimensions:
+    - name: "dataStandard"
+      displayName: "数据标准"
+      weight: 0.60
+      description: "数据符合国家/行业标准和企业内部数据标准的程度"
+      
+    - name: "businessRule"
+      displayName: "业务规则"
+      weight: 0.40
+      description: "数据符合业务逻辑和规则的程度"
+
+  # 规则清单
+  rules:
+    # N-S01: 身份证号格式校验 (GB 11643)
+    - id: "N-S01"
+      name: "chinaIdNumberFormat"
+      displayName: "身份证号格式校验"
+      category: "normativity"
+      subCategory: "dataStandard"
+      description: "校验身份证号符合GB 11643标准（18位，最后一位可为X）"
+      testDefinitionName: "columnValuesToMatchRegex"
+      entityType: "COLUMN"
+      parameters:
+        - name: "regex"
+          value: "^[1-9]\\d{5}(19|20)\\d{2}(0[1-9]|1[0-2])(0[1-9]|[12]\\d|3[01])\\d{3}[\\dX]$"
+      applicability:
+        appliesTo:
+          - dataType: "STRING"
+            columnNamePatterns: ["*id_card*", "*证件号*", "*cert_no*"]
+      qualityDimension: "Consistency"
+      severity: "HIGH"
+      
+    # N-S02: 手机号格式校验
+    - id: "N-S02"
+      name: "chinaMobilePhoneFormat"
+      displayName: "手机号格式校验"
+      category: "normativity"
+      subCategory: "dataStandard"
+      description: "校验中国大陆手机号格式（11位，以1开头）"
+      testDefinitionName: "columnValuesToMatchRegex"
+      entityType: "COLUMN"
+      parameters:
+        - name: "regex"
+          value: "^1[3-9]\\d{9}$"
+      applicability:
+        appliesTo:
+          - dataType: "STRING"
+            columnNamePatterns: ["*phone*", "*mobile*", "*手机*", "*tel*"]
+      qualityDimension: "Consistency"
+      severity: "MEDIUM"
+      
+    # N-S03: 邮箱格式校验
+    - id: "N-S03"
+      name: "emailFormat"
+      displayName: "邮箱格式校验"
+      category: "normativity"
+      subCategory: "dataStandard"
+      description: "校验邮箱地址格式符合RFC 5322标准"
+      testDefinitionName: "columnValuesToMatchRegex"
+      entityType: "COLUMN"
+      parameters:
+        - name: "regex"
+          value: "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"
+      applicability:
+        appliesTo:
+          - dataType: "STRING"
+            columnNamePatterns: ["*email*", "*邮箱*"]
+      qualityDimension: "Consistency"
+      severity: "MEDIUM"
+      
+    # N-S04: 日期格式校验 (YYYY-MM-DD)
+    - id: "N-S04"
+      name: "dateFormatISO"
+      displayName: "日期格式校验(ISO)"
+      category: "normativity"
+      subCategory: "dataStandard"
+      description: "校验日期格式符合ISO 8601标准（YYYY-MM-DD）"
+      testDefinitionName: "columnValuesToMatchRegex"
+      entityType: "COLUMN"
+      parameters:
+        - name: "regex"
+          value: "^\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01])$"
+      applicability:
+        appliesTo:
+          - dataType: "DATE"
+          - dataType: "DATETIME"
+          - dataType: "TIMESTAMP"
+          - dataType: "STRING"
+            columnNamePatterns: ["*date*", "*日期*", "*dt*"]
+      qualityDimension: "Consistency"
+      severity: "HIGH"
+      
+    # N-S05: 行政区划代码校验 (GB/T 2260)
+    - id: "N-S05"
+      name: "regionCodeFormat"
+      displayName: "行政区划代码校验"
+      category: "normativity"
+      subCategory: "dataStandard"
+      description: "校验行政区划代码符合GB/T 2260标准（6位数字）"
+      testDefinitionName: "columnValuesToMatchRegex"
+      entityType: "COLUMN"
+      parameters:
+        - name: "regex"
+          value: "^\\d{6}$"
+      applicability:
+        appliesTo:
+          - dataType: "STRING"
+            columnNamePatterns: ["*region*", "*区域*", "*province*", "*city*", "*district*"]
+      qualityDimension: "Consistency"
+      severity: "MEDIUM"
+      
+    # N-S06: 行业分类代码校验 (GB/T 4754)
+    - id: "N-S06"
+      name: "industryCodeFormat"
+      displayName: "行业分类代码校验"
+      category: "normativity"
+      subCategory: "dataStandard"
+      description: "校验行业分类代码符合GB/T 4754标准"
+      testDefinitionName: "columnValuesToMatchRegex"
+      entityType: "COLUMN"
+      parameters:
+        - name: "regex"
+          value: "^[A-H,J-N,P]\\d{2,4}[0-9A-Z]$"
+      applicability:
+        appliesTo:
+          - dataType: "STRING"
+            columnNamePatterns: ["*industry*", "*行业*", "*sector*"]
+      qualityDimension: "Consistency"
+      severity: "MEDIUM"
+
+    # N-R01: 订单状态枚举值校验
+    - id: "N-R01"
+      name: "orderStatusEnum"
+      displayName: "订单状态枚举值校验"
+      category: "normativity"
+      subCategory: "businessRule"
+      description: "校验订单状态值在业务允许的枚举范围内"
+      testDefinitionName: "columnValuesToBeInSet"
+      entityType: "COLUMN"
+      parameters:
+        - name: "columnValues"
+          value: "['pending', 'confirmed', 'processing', 'shipped', 'delivered', 'cancelled', 'refunded']"
+      applicability:
+        appliesTo:
+          - dataType: "STRING"
+            columnNamePatterns: ["*order_status*", "*订单状态*", "*status*"]
+      qualityDimension: "Consistency"
+      severity: "HIGH"
+
+    # N-R02: 支付状态枚举值校验
+    - id: "N-R02"
+      name: "paymentStatusEnum"
+      displayName: "支付状态枚举值校验"
+      category: "normativity"
+      subCategory: "businessRule"
+      description: "校验支付状态值在业务允许的枚举范围内"
+      testDefinitionName: "columnValuesToBeInSet"
+      entityType: "COLUMN"
+      parameters:
+        - name: "columnValues"
+          value: "['unpaid', 'paid', 'refunding', 'refunded', 'failed']"
+      applicability:
+        appliesTo:
+          - dataType: "STRING"
+            columnNamePatterns: ["*payment_status*", "*支付状态*", "*pay_status*"]
+      qualityDimension: "Consistency"
+      severity: "HIGH"
+
+    # N-R03: 性别枚举值校验
+    - id: "N-R03"
+      name: "genderEnum"
+      displayName: "性别枚举值校验"
+      category: "normativity"
+      subCategory: "businessRule"
+      description: "校验性别值在标准枚举范围内"
+      testDefinitionName: "columnValuesToBeInSet"
+      entityType: "COLUMN"
+      parameters:
+        - name: "columnValues"
+          value: "['male', 'female', 'unknown']"
+      applicability:
+        appliesTo:
+          - dataType: "STRING"
+            columnNamePatterns: ["*gender*", "*性别*", "*sex*"]
+      qualityDimension: "Consistency"
+      severity: "MEDIUM"
+
+# ============================================================================
+# 二、完整性维度 (Completeness) - 权重: 20%
+# 定义：数据集中应包含的信息无缺失、无遗漏的程度
+# ============================================================================
+completeness:
+  displayName: "完整性"
+  weight: 0.20
+  description: "数据集中应包含的信息无缺失、无遗漏的程度，反映数据元素被赋予数值程度的丰满度"
+  
+  subDimensions:
+    - name: "elementCompleteness"
+      displayName: "数据元素完整性"
+      weight: 0.50
+      description: "关键字段非空率和字段填充率达标"
+      
+    - name: "recordCompleteness"
+      displayName: "数据记录完整性"
+      weight: 0.50
+      description: "单条数据记录关键信息完备"
+      
+  rules:
+    # C-E01: 主键非空校验
+    - id: "C-E01"
+      name: "primaryKeyNotNull"
+      displayName: "主键非空校验"
+      category: "completeness"
+      subCategory: "elementCompleteness"
+      description: "校验主键字段不允许为空"
+      testDefinitionName: "columnValuesToBeNotNull"
+      entityType: "COLUMN"
+      parameters: []
+      applicability:
+        appliesTo:
+          - columnType: "PRIMARY_KEY"
+      qualityDimension: "Completeness"
+      severity: "CRITICAL"
+      
+    # C-E02: 关键业务字段非空校验
+    - id: "C-E02"
+      name: "businessKeyNotNull"
+      displayName: "关键业务字段非空校验"
+      category: "completeness"
+      subCategory: "elementCompleteness"
+      description: "校验关键业务字段（如客户名、身份证号、手机号等）不允许为空"
+      testDefinitionName: "columnValuesToBeNotNull"
+      entityType: "COLUMN"
+      parameters: []
+      applicability:
+        appliesTo:
+          - dataType: "ANY"
+            columnNamePatterns: 
+              - "*name*"
+              - "*id_card*"
+              - "*phone*"
+              - "*email*"
+              - "*id_no*"
+              - "*证件号*"
+              - "*客户名*"
+            isBusinessKey: true
+      qualityDimension: "Completeness"
+      severity: "HIGH"
+      
+    # C-E03: 外键引用完整性校验
+    - id: "C-E03"
+      name: "foreignKeyReferenceComplete"
+      displayName: "外键引用完整性校验"
+      category: "completeness"
+      subCategory: "recordCompleteness"
+      description: "校验外键引用在主表中有对应记录"
+      testDefinitionName: "tableCustomSQLQuery"
+      entityType: "TABLE"
+      parameters:
+        - name: "sqlExpression"
+          value: "SELECT COUNT(*) FROM {table} t WHERE NOT EXISTS (SELECT 1 FROM {referenced_table} r WHERE r.id = t.{foreign_key}) AND t.{foreign_key} IS NOT NULL"
+        - name: "strategy"
+          value: "COUNT"
+      applicability:
+        appliesTo:
+          - columnType: "FOREIGN_KEY"
+      qualityDimension: "Completeness"
+      severity: "HIGH"
+
+    # C-E04: 字段填充率校验
+    - id: "C-E04"
+      name: "fieldFillRate"
+      displayName: "字段填充率校验"
+      category: "completeness"
+      subCategory: "elementCompleteness"
+      description: "校验字段填充率是否达到业务要求阈值"
+      testDefinitionName: "columnValuesToBeNotNull"
+      entityType: "COLUMN"
+      parameters:
+        - name: "minValue"
+          value: "95"  # 默认最低填充率95%
+      applicability:
+        appliesTo:
+          - dataType: "ANY"
+      qualityDimension: "Completeness"
+      severity: "MEDIUM"
+
+    # C-E05: 必填字段非空校验
+    - id: "C-E05"
+      name: "requiredFieldNotNull"
+      displayName: "必填字段非空校验"
+      category: "completeness"
+      subCategory: "elementCompleteness"
+      description: "校验必填字段不允许为空"
+      testDefinitionName: "columnValuesToBeNotNull"
+      entityType: "COLUMN"
+      parameters: []
+      applicability:
+        appliesTo:
+          - columnType: "REQUIRED"
+      qualityDimension: "Completeness"
+      severity: "HIGH"
+
+    # C-E06: 交易记录完整性校验
+    - id: "C-E06"
+      name: "transactionRecordCompleteness"
+      displayName: "交易记录完整性校验"
+      category: "completeness"
+      subCategory: "recordCompleteness"
+      description: "校验交易记录包含必要要素（时间、金额、对手方、渠道）"
+      testDefinitionName: "tableCustomSQLQuery"
+      entityType: "TABLE"
+      parameters:
+        - name: "sqlExpression"
+          value: "SELECT COUNT(*) FROM {table} WHERE transaction_time IS NULL OR amount IS NULL OR counterparty IS NULL OR channel IS NULL"
+        - name: "strategy"
+          value: "COUNT"
+      applicability:
+        appliesTo:
+          - tableType: "TRANSACTION"
+      qualityDimension: "Completeness"
+      severity: "HIGH"
+
+# ============================================================================
+# 三、准确性维度 (Accuracy) - 权重: 15%
+# 定义：数据反映客观事物真实状态、数值与实际相符且无虚假/误导信息的程度
+# ============================================================================
+accuracy:
+  displayName: "准确性"
+  weight: 0.15
+  description: "数据反映客观事物真实状态、数值与实际相符且无虚假/误导信息的程度"
+  
+  subDimensions:
+    - name: "formatAccuracy"
+      displayName: "数据格式准确性"
+      weight: 0.25
+      description: "数据格式符合预设要求"
+      
+    - name: "duplicationRate"
+      displayName: "数据重复率"
+      weight: 0.25
+      description: "数据重复出现的比例"
+      
+    - name: "dirtyDataRate"
+      displayName: "脏数据出现率"
+      weight: 0.25
+      description: "脏数据（乱码、异常字符等）出现的比例"
+      
+    - name: "valueRangeValidation"
+      displayName: "值域校验"
+      weight: 0.25
+      description: "数值在业务允许的范围内"
+      
+  rules:
+    # A-F01: 年龄数值范围校验 (0-120)
+    - id: "A-F01"
+      name: "ageRangeValidation"
+      displayName: "年龄数值范围校验"
+      category: "accuracy"
+      subCategory: "valueRangeValidation"
+      description: "校验年龄值在合理范围内（0-120岁）"
+      testDefinitionName: "columnValueMinToBeBetween"
+      entityType: "COLUMN"
+      parameters:
+        - name: "minValue"
+          value: "0"
+      applicability:
+        appliesTo:
+          - dataType: "INT"
+          - dataType: "BIGINT"
+          - dataType: "SMALLINT"
+            columnNamePatterns: ["*age*", "*年龄*"]
+      qualityDimension: "Accuracy"
+      severity: "MEDIUM"
+      
+    - id: "A-F01-MAX"
+      name: "ageMaxValidation"
+      displayName: "年龄最大值校验"
+      category: "accuracy"
+      subCategory: "valueRangeValidation"
+      description: "校验年龄值不超过合理上限（120岁）"
+      testDefinitionName: "columnValueMaxToBeBetween"
+      entityType: "COLUMN"
+      parameters:
+        - name: "maxValue"
+          value: "120"
+      applicability:
+        appliesTo:
+          - dataType: "INT"
+          - dataType: "BIGINT"
+          - dataType: "SMALLINT"
+            columnNamePatterns: ["*age*", "*年龄*"]
+      qualityDimension: "Accuracy"
+      severity: "MEDIUM"
+      
+    # A-F02: 金额数值范围校验 (非负数)
+    - id: "A-F02"
+      name: "amountNonNegative"
+      displayName: "金额非负校验"
+      category: "accuracy"
+      subCategory: "valueRangeValidation"
+      description: "校验金额字段不为负数"
+      testDefinitionName: "columnValueMinToBeBetween"
+      entityType: "COLUMN"
+      parameters:
+        - name: "minValue"
+          value: "0"
+      applicability:
+        appliesTo:
+          - dataType: "DECIMAL"
+          - dataType: "FLOAT"
+          - dataType: "DOUBLE"
+          - dataType: "INT"
+            columnNamePatterns: ["*amount*", "*金额*", "*price*", "*总价*", "*balance*"]
+      qualityDimension: "Accuracy"
+      severity: "HIGH"
+      
+    # A-F03: 数值精度校验 (金额保留2位小数)
+    - id: "A-F03"
+      name: "amountDecimalPrecision"
+      displayName: "金额精度校验"
+      category: "accuracy"
+      subCategory: "formatAccuracy"
+      description: "校验金额字段小数位数符合要求（不超过2位）"
+      testDefinitionName: "tableCustomSQLQuery"
+      entityType: "TABLE"
+      parameters:
+        - name: "sqlExpression"
+          value: "SELECT COUNT(*) FROM {table} WHERE {column} != ROUND({column}, 2)"
+        - name: "strategy"
+          value: "COUNT"
+      applicability:
+        appliesTo:
+          - dataType: "DECIMAL"
+          - dataType: "FLOAT"
+          - dataType: "DOUBLE"
+            columnNamePatterns: ["*amount*", "*金额*", "*price*", "*cost*"]
+      qualityDimension: "Accuracy"
+      severity: "MEDIUM"
+      
+    # A-F04: 数据重复率校验
+    - id: "A-F04"
+      name: "dataDuplicationRate"
+      displayName: "数据重复率校验"
+      category: "accuracy"
+      subCategory: "duplicationRate"
+      description: "校验数据重复率不超过阈值（如5%）"
+      testDefinitionName: "tableCustomSQLQuery"
+      entityType: "TABLE"
+      parameters:
+        - name: "sqlExpression"
+          value: "WITH total AS (SELECT COUNT(*) as cnt FROM {table}), duplicates AS (SELECT COUNT(*) as dup FROM {table} GROUP BY {key_columns} HAVING COUNT(*) > 1) SELECT CASE WHEN (SELECT cnt FROM total) > 0 THEN (SELECT COALESCE(SUM(dup - 1), 0) FROM duplicates) * 100.0 / (SELECT cnt FROM total) ELSE 0 END"
+        - name: "strategy"
+          value: "COUNT"
+      applicability:
+        appliesTo:
+          - tableType: "ANY"
+            hasUniqueKey: true
+      qualityDimension: "Accuracy"
+      severity: "MEDIUM"
+      
+    # A-F05: 脏数据检测 (特殊字符)
+    - id: "A-F05"
+      name: "dirtyDataDetection"
+      displayName: "脏数据检测"
+      category: "accuracy"
+      subCategory: "dirtyDataRate"
+      description: "检测包含乱码、异常字符的脏数据"
+      testDefinitionName: "tableCustomSQLQuery"
+      entityType: "TABLE"
+      parameters:
+        - name: "sqlExpression"
+          value: "SELECT COUNT(*) FROM {table} WHERE {column} REGEXP '[^[:print:][:space:]]' AND {column} IS NOT NULL"
+        - name: "strategy"
+          value: "COUNT"
+      applicability:
+        appliesTo:
+          - dataType: "STRING"
+      qualityDimension: "Accuracy"
+      severity: "MEDIUM"
+
+    # A-F06: URL格式校验
+    - id: "A-F06"
+      name: "urlFormatValidation"
+      displayName: "URL格式校验"
+      category: "accuracy"
+      subCategory: "formatAccuracy"
+      description: "校验URL格式符合RFC 3986标准"
+      testDefinitionName: "columnValuesToMatchRegex"
+      entityType: "COLUMN"
+      parameters:
+        - name: "regex"
+          value: "^https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)$"
+      applicability:
+        appliesTo:
+          - dataType: "STRING"
+            columnNamePatterns: ["*url*", "*link*", "*href*"]
+      qualityDimension: "Accuracy"
+      severity: "LOW"
+
+    # A-F07: IP地址格式校验
+    - id: "A-F07"
+      name: "ipAddressFormatValidation"
+      displayName: "IP地址格式校验"
+      category: "accuracy"
+      subCategory: "formatAccuracy"
+      description: "校验IPv4地址格式"
+      testDefinitionName: "columnValuesToMatchRegex"
+      entityType: "COLUMN"
+      parameters:
+        - name: "regex"
+          value: "^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$"
+      applicability:
+        appliesTo:
+          - dataType: "STRING"
+            columnNamePatterns: ["*ip*", "*ip_address*"]
+      qualityDimension: "Accuracy"
+      severity: "LOW"
+
+# ============================================================================
+# 四、一致性维度 (Consistency) - 权重: 15%
+# 定义：同一数据在不同时间、不同数据源、不同系统/模块中的表述及逻辑关系保持统一的程度
+# ============================================================================
+consistency:
+  displayName: "一致性"
+  weight: 0.15
+  description: "同一数据在不同时间、不同数据源、不同系统/模块中的表述及逻辑关系保持统一的程度"
+  
+  subDimensions:
+    - name: "sameDataConsistency"
+      displayName: "相同数据一致性"
+      weight: 0.25
+      description: "同一数据在不同来源中保持一致"
+      
+    - name: "relatedDataLogic"
+      displayName: "关联数据逻辑性"
+      weight: 0.75
+      description: "数据间关联逻辑符合业务规则"
+      
+  rules:
+    # CS-S01: 主表与子表金额汇总一致性
+    - id: "CS-S01"
+      name: "parentChildAmountConsistency"
+      displayName: "父子表金额汇总一致性"
+      category: "consistency"
+      subCategory: "relatedDataLogic"
+      description: "校验父订单金额等于子订单金额之和"
+      testDefinitionName: "tableCustomSQLQuery"
+      entityType: "TABLE"
+      parameters:
+        - name: "sqlExpression"
+          value: "SELECT COUNT(*) FROM parent_table p WHERE p.amount != (SELECT COALESCE(SUM(c.amount), 0) FROM child_table c WHERE c.parent_id = p.id)"
+        - name: "strategy"
+          value: "COUNT"
+      applicability:
+        appliesTo:
+          - tableType: "MASTER_DETAIL"
+      qualityDimension: "Consistency"
+      severity: "HIGH"
+      
+    # CS-S02: 跨系统客户名称一致性
+    - id: "CS-S02"
+      name: "crossSystemCustomerNameConsistency"
+      displayName: "跨系统客户名称一致性"
+      category: "consistency"
+      subCategory: "sameDataConsistency"
+      description: "校验客户姓名在CRM系统和业务系统中一致"
+      testDefinitionName: "tableCustomSQLQuery"
+      entityType: "TABLE"
+      parameters:
+        - name: "sqlExpression"
+          value: "SELECT COUNT(*) FROM system_a a JOIN system_b b ON a.customer_id = b.customer_id WHERE a.customer_name != b.customer_name"
+        - name: "strategy"
+          value: "COUNT"
+      applicability:
+        appliesTo:
+          - tableType: "CUSTOMER"
+      qualityDimension: "Consistency"
+      severity: "MEDIUM"
+      
+    # CS-S03: 订单金额与支付金额一致性
+    - id: "CS-S03"
+      name: "orderPaymentAmountConsistency"
+      displayName: "订单支付金额一致性"
+      category: "consistency"
+      subCategory: "relatedDataLogic"
+      description: "校验订单金额与支付记录金额一致"
+      testDefinitionName: "tableCustomSQLQuery"
+      entityType: "TABLE"
+      parameters:
+        - name: "sqlExpression"
+          value: "SELECT COUNT(*) FROM orders o JOIN payments p ON o.order_id = p.order_id WHERE o.amount != p.amount"
+        - name: "strategy"
+          value: "COUNT"
+      applicability:
+        appliesTo:
+          - tableType: "ORDER"
+      qualityDimension: "Consistency"
+      severity: "HIGH"
+      
+    # CS-S04: 账户余额计算一致性
+    - id: "CS-S04"
+      name: "accountBalanceCalculationConsistency"
+      displayName: "账户余额计算一致性"
+      category: "consistency"
+      subCategory: "relatedDataLogic"
+      description: "校验账户余额等于期初余额加收入减支出"
+      testDefinitionName: "tableCustomSQLQuery"
+      entityType: "TABLE"
+      parameters:
+        - name: "sqlExpression"
+          value: "SELECT COUNT(*) FROM account_balance ab WHERE ab.current_balance != ab.initial_balance + ab.total_income - ab.total_expense"
+        - name: "strategy"
+          value: "COUNT"
+      applicability:
+        appliesTo:
+          - tableType: "ACCOUNT"
+      qualityDimension: "Consistency"
+      severity: "HIGH"
+
+    # CS-S05: 库存数据一致性
+    - id: "CS-S05"
+      name: "inventoryConsistency"
+      displayName: "库存数据一致性"
+      category: "consistency"
+      subCategory: "relatedDataLogic"
+      description: "校验实时库存等于系统库存加在途库存"
+      testDefinitionName: "tableCustomSQLQuery"
+      entityType: "TABLE"
+      parameters:
+        - name: "sqlExpression"
+          value: "SELECT COUNT(*) FROM inventory i WHERE i.real_stock != i.system_stock + i.in_transit_stock"
+        - name: "strategy"
+          value: "COUNT"
+      applicability:
+        appliesTo:
+          - tableType: "INVENTORY"
+      qualityDimension: "Consistency"
+      severity: "MEDIUM"
+
+    # CS-S06: 日期格式跨系统一致性
+    - id: "CS-S06"
+      name: "dateFormatConsistency"
+      displayName: "日期格式一致性"
+      category: "consistency"
+      subCategory: "sameDataConsistency"
+      description: "校验日期字段格式统一为YYYY-MM-DD"
+      testDefinitionName: "columnValuesToMatchRegex"
+      entityType: "COLUMN"
+      parameters:
+        - name: "regex"
+          value: "^\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01])$"
+      applicability:
+        appliesTo:
+          - dataType: "STRING"
+            columnNamePatterns: ["*date*", "*dt*"]
+      qualityDimension: "Consistency"
+      severity: "HIGH"
+
+    # CS-S07: 表数据一致性 (跨表比对)
+    - id: "CS-S07"
+      name: "tableDataConsistency"
+      displayName: "表数据一致性跨表比对"
+      category: "consistency"
+      subCategory: "sameDataConsistency"
+      description: "校验两张表的数据一致性（使用TableDiff）"
+      testDefinitionName: "tableDiff"
+      entityType: "TABLE"
+      parameters:
+        - name: "table2"
+          value: "${TARGET_TABLE_FQN}"  # 目标表FQN，运行时替换
+        - name: "keyColumns"
+          value: "['id']"
+        - name: "threshold"
+          value: "0"
+      applicability:
+        appliesTo:
+          - tableType: "ANY"
+      qualityDimension: "Consistency"
+      severity: "HIGH"
+
+# ============================================================================
+# 五、时效性维度 (Timeliness) - 权重: 15%
+# 定义：数据产生、更新、传输的速度能满足业务对数据新鲜度的需求
+# ============================================================================
+timeliness:
+  displayName: "时效性"
+  weight: 0.15
+  description: "数据产生、更新、传输的速度能满足业务对数据新鲜度的需求，无滞后性"
+  
+  subDimensions:
+    - name: "timePeriodAccuracy"
+      displayName: "基于时间段的正确性"
+      weight: 0.40
+      description: "数据在特定时间段内的正确性"
+      
+    - name: "timePointTimeliness"
+      displayName: "基于时间点的及时性"
+      weight: 0.30
+      description: "数据在特定时间点的可用性"
+      
+    - name: "sequenceTimeliness"
+      displayName: "时序性"
+      weight: 0.30
+      description: "数据的时间顺序符合业务逻辑"
+      
+  rules:
+    # T-T01: 数据更新延迟监控
+    - id: "T-T01"
+      name: "dataUpdateLatency"
+      displayName: "数据更新延迟监控"
+      category: "timeliness"
+      subCategory: "timePointTimeliness"
+      description: "校验数据最后更新时间距当前时间的间隔不超过阈值"
+      testDefinitionName: "tableCustomSQLQuery"
+      entityType: "TABLE"
+      parameters:
+        - name: "sqlExpression"
+          value: "SELECT TIMESTAMPDIFF(HOUR, MAX(update_time), NOW()) FROM {table}"
+        - name: "strategy"
+          value: "COUNT"
+      applicability:
+        appliesTo:
+          - tableType: "ANY"
+            hasUpdateTime: true
+      qualityDimension: "Timeliness"
+      severity: "HIGH"
+      
+    # T-T02: 实时数据延迟校验
+    - id: "T-T02"
+      name: "realtimeDataLatency"
+      displayName: "实时数据延迟校验"
+      category: "timeliness"
+      subCategory: "timePointTimeliness"
+      description: "校验实时数据延迟不超过设定阈值（如60秒）"
+      testDefinitionName: "tableCustomSQLQuery"
+      entityType: "TABLE"
+      parameters:
+        - name: "sqlExpression"
+          value: "SELECT CASE WHEN TIMESTAMPDIFF(SECOND, MAX(event_time), NOW()) > 60 THEN 1 ELSE 0 END FROM {table}"
+        - name: "strategy"
+          value: "COUNT"
+      applicability:
+        appliesTo:
+          - tableType: "REALTIME"
+      qualityDimension: "Timeliness"
+      severity: "CRITICAL"
+      
+    # T-T03: 数据时间顺序校验
+    - id: "T-T03"
+      name: "timeSequenceValidation"
+      displayName: "数据时间顺序校验"
+      category: "timeliness"
+      subCategory: "sequenceTimeliness"
+      description: "校验数据的时间顺序符合业务逻辑（如创建时间<=处理时间<=完成时间）"
+      testDefinitionName: "tableCustomSQLQuery"
+      entityType: "TABLE"
+      parameters:
+        - name: "sqlExpression"
+          value: "SELECT COUNT(*) FROM {table} WHERE create_time > process_time OR process_time > complete_time"
+        - name: "strategy"
+          value: "COUNT"
+      applicability:
+        appliesTo:
+          - tableType: "WORKFLOW"
+      qualityDimension: "Timeliness"
+      severity: "HIGH"
+      
+    # T-T04: 历史数据时间有效性
+    - id: "T-T04"
+      name: "historicalDataTimeValidity"
+      displayName: "历史数据时间有效性"
+      category: "timeliness"
+      subCategory: "timePeriodAccuracy"
+      description: "校验历史数据的事务时间在合理范围内（如不超过当前时间）"
+      testDefinitionName: "tableCustomSQLQuery"
+      entityType: "TABLE"
+      parameters:
+        - name: "sqlExpression"
+          value: "SELECT COUNT(*) FROM {table} WHERE transaction_date > CURRENT_DATE"
+        - name: "strategy"
+          value: "COUNT"
+      applicability:
+        appliesTo:
+          - tableType: "TRANSACTION"
+      qualityDimension: "Timeliness"
+      severity: "MEDIUM"
+
+    # T-T05: 定时任务数据新鲜度
+    - id: "T-T05"
+      name: "scheduledTaskFreshness"
+      displayName: "定时任务数据新鲜度"
+      category: "timeliness"
+      subCategory: "timePointTimeliness"
+      description: "校验日批次数据在计划时间内完成加载"
+      testDefinitionName: "tableCustomSQLQuery"
+      entityType: "TABLE"
+      parameters:
+        - name: "sqlExpression"
+          value: "SELECT COUNT(*) FROM {table} WHERE DATE(etl_date) = CURRENT_DATE AND etl_time IS NULL"
+        - name: "strategy"
+          value: "COUNT"
+      applicability:
+        appliesTo:
+          - tableType: "BATCH"
+      qualityDimension: "Timeliness"
+      severity: "MEDIUM"
+
+    # T-T06: 事件时间合理性校验
+    - id: "T-T06"
+      name: "eventTimeReasonableness"
+      displayName: "事件时间合理性校验"
+      category: "timeliness"
+      subCategory: "timePeriodAccuracy"
+      description: "校验事件时间是否在合理范围内（如订单时间不能早于客户注册时间）"
+      testDefinitionName: "tableCustomSQLQuery"
+      entityType: "TABLE"
+      parameters:
+        - name: "sqlExpression"
+          value: "SELECT COUNT(*) FROM orders o JOIN customers c ON o.customer_id = c.customer_id WHERE o.order_time < c.register_time"
+        - name: "strategy"
+          value: "COUNT"
+      applicability:
+        appliesTo:
+          - tableType: "TRANSACTION"
+      qualityDimension: "Timeliness"
+      severity: "HIGH"
+
+# ============================================================================
+# 六、可访问性维度 (Accessibility) - 权重: 15%
+# 定义：数据可被授权用户快速获取并正常使用的程度
+# ============================================================================
+accessibility:
+  displayName: "可访问性"
+  weight: 0.15
+  description: "数据可被授权用户快速获取并正常使用的程度"
+  
+  subDimensions:
+    - name: "accessibility"
+      displayName: "可访问性"
+      weight: 0.35
+      description: "数据通道可用、权限适配"
+      
+    - name: "availability"
+      displayName: "可用性"
+      weight: 0.30
+      description: "数据可正常读取、性能达标"
+      
+    - name: "understandability"
+      displayName: "数据可理解性"
+      weight: 0.35
+      description: "数据有完整元数据、可追溯"
+      
+  rules:
+    # A-A01: 表可访问性校验
+    - id: "A-A01"
+      name: "tableAccessible"
+      displayName: "表可访问性校验"
+      category: "accessibility"
+      subCategory: "accessibility"
+      description: "校验表可被正常查询访问"
+      testDefinitionName: "tableCustomSQLQuery"
+      entityType: "TABLE"
+      parameters:
+        - name: "sqlExpression"
+          value: "SELECT 1 FROM {table} LIMIT 1"
+        - name: "strategy"
+          value: "COUNT"
+      applicability:
+        appliesTo:
+          - tableType: "ANY"
+      qualityDimension: "Availability"
+      severity: "CRITICAL"
+      
+    # A-A02: 查询性能校验
+    - id: "A-A02"
+      name: "queryPerformanceCheck"
+      displayName: "查询性能校验"
+      category: "accessibility"
+      subCategory: "availability"
+      description: "校验基本查询在规定时间内返回（如10秒内）"
+      testDefinitionName: "tableCustomSQLQuery"
+      entityType: "TABLE"
+      parameters:
+        - name: "sqlExpression"
+          value: "SELECT COUNT(*) FROM {table}"  # 性能由执行时间决定
+        - name: "strategy"
+          value: "COUNT"
+      applicability:
+        appliesTo:
+          - tableType: "ANY"
+      qualityDimension: "Availability"
+      severity: "MEDIUM"
+      timeout: 10  # 超时时间（秒）
+      
+    # A-A03: 表数据量合理性
+    - id: "A-A03"
+      name: "tableRowCountReasonableness"
+      displayName: "表数据量合理性"
+      category: "accessibility"
+      subCategory: "availability"
+      description: "校验表数据量在合理范围内（如非空表且不超过预期上限）"
+      testDefinitionName: "tableRowCountToBeBetween"
+      entityType: "TABLE"
+      parameters:
+        - name: "minValue"
+          value: "1"  # 至少1条记录
+      applicability:
+        appliesTo:
+          - tableType: "ANY"
+      qualityDimension: "Availability"
+      severity: "LOW"
+      
+    # A-A04: 必填列存在性校验
+    - id: "A-A04"
+      name: "requiredColumnExists"
+      displayName: "必填列存在性校验"
+      category: "accessibility"
+      subCategory: "understandability"
+      description: "校验必填列存在于表中"
+      testDefinitionName: "tableColumnToMatchSet"
+      entityType: "TABLE"
+      parameters:
+        - name: "columnNames"
+          value: "['id', 'name', 'create_time', 'update_time']"  # 基础字段集
+      applicability:
+        appliesTo:
+          - tableType: "ANY"
+      qualityDimension: "Availability"
+      severity: "MEDIUM"
+
+    # A-A05: 主键唯一性校验
+    - id: "A-A05"
+      name: "primaryKeyUniqueness"
+      displayName: "主键唯一性校验"
+      category: "accessibility"
+      subCategory: "availability"
+      description: "校验主键列的值唯一"
+      testDefinitionName: "columnValuesToBeUnique"
+      entityType: "COLUMN"
+      parameters: []
+      applicability:
+        appliesTo:
+          - columnType: "PRIMARY_KEY"
+      qualityDimension: "Availability"
+      severity: "CRITICAL"
+
+    # A-A06: 数据可追溯性校验
+    - id: "A-A06"
+      name: "dataTraceability"
+      displayName: "数据可追溯性校验"
+      category: "accessibility"
+      subCategory: "understandability"
+      description: "校验记录有完整的审计字段（创建时间、创建人、更新时间、更新人）"
+      testDefinitionName: "tableCustomSQLQuery"
+      entityType: "TABLE"
+      parameters:
+        - name: "sqlExpression"
+          value: "SELECT COUNT(*) FROM {table} WHERE create_time IS NULL OR create_by IS NULL"
+        - name: "strategy"
+          value: "COUNT"
+      applicability:
+        appliesTo:
+          - tableType: "ANY"
+            hasAuditFields: true
+      qualityDimension: "Completeness"
+      severity: "MEDIUM"
+
+# ============================================================================
+# 规则应用示例
+# ============================================================================
+examples:
+  # 示例1: 应用所有规范性规则
+  applyNormativityRules: |
+    processor:
+      type: test-suite
+      config:
+        testCases:
+          - testDefinitionName: columnValuesToMatchRegex
+            name: chinaIdNumberFormat
+            columnName: cert_no
+            parameterValues:
+              - name: regex
+                value: "^[1-9]\\d{5}(19|20)\\d{2}(0[1-9]|1[0-2])(0[1-9]|[12]\\d|3[01])\\d{3}[\\dX]$"
+          - testDefinitionName: columnValuesToMatchRegex
+            name: mobilePhoneFormat
+            columnName: phone
+            parameterValues:
+              - name: regex
+                value: "^1[3-9]\\d{9}$"
+
+  # 示例2: 应用完整性规则到客户表
+  applyCompletenessRulesToCustomer: |
+    source:
+      type: TestSuite
+      serviceName: my_service
+      sourceConfig:
+        config:
+          type: TestSuiteConfig
+          entityFullyQualifiedName: MySQL.default.db.customers
+    processor:
+      type: test-suite
+      config:
+        testCases:
+          - testDefinitionName: columnValuesToBeNotNull
+            name: customerNameNotNull
+            columnName: customer_name
+          - testDefinitionName: columnValuesToBeNotNull
+            name: certNoNotNull
+            columnName: cert_no
+          - testDefinitionName: columnValuesToBeNotNull
+            name: phoneNotNull
+            columnName: phone
+
+  # 示例3: 应用跨表一致性规则
+  applyConsistencyRules: |
+    processor:
+      type: test-suite
+      config:
+        testCases:
+          - testDefinitionName: tableDiff
+            name: sourceTargetConsistency
+            parameterValues:
+              - name: table2
+                value: "MySQL.default.db.backup_table"
+              - name: keyColumns
+                value: "['id']"
+              - name: threshold
+                value: "0"
+
+# ============================================================================
+# 规则优先级定义
+# ============================================================================
+priority:
+  CRITICAL:
+    description: "关键规则，失败会阻断下游流程"
+    autoBlock: true
+    alertLevel: "IMMEDIATE"
+  HIGH:
+    description: "重要规则，需要立即处理"
+    autoBlock: false
+    alertLevel: "HIGH"
+  MEDIUM:
+    description: "一般规则，建议处理"
+    autoBlock: false
+    alertLevel: "NORMAL"
+  LOW:
+    description: "低优先级规则，可延后处理"
+    autoBlock: false
+    alertLevel: "LOW"

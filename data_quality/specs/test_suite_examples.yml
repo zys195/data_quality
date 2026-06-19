@@ -1,0 +1,504 @@
+# ============================================================================
+# 数据质量评价规则库 - OpenMetadata TestSuite 配置
+# 依据《GB/T 36344-2018 信息技术 数据质量评价指标》国家标准
+# ============================================================================
+# 
+# 使用说明：
+# 1. 将此文件复制为 test_suite.yaml
+# 2. 修改 sourceConfig.entityFullyQualifiedName 为目标表
+# 3. 修改 processor.config.testCases 中的参数
+# 4. 执行: metadata test -c test_suite.yaml
+# ============================================================================
+
+# ============================================================================
+# 一、规范性测试套件
+# ============================================================================
+normativity_test_suite:
+  # --------------------------------------------------------------------------
+  # 1.1 格式规范性测试
+  # --------------------------------------------------------------------------
+  format_tests:
+    source:
+      type: TestSuite
+      serviceName: ${SERVICE_NAME}
+      sourceConfig:
+        config:
+          type: TestSuiteConfig
+          entityFullyQualifiedName: ${TABLE_FQN}
+    
+    processor:
+      type: test-suite
+      config:
+        testCases:
+          # 身份证号格式校验 (18位)
+          - testDefinitionName: columnValuesToMatchRegex
+            name: cert_no_format_check
+            columnName: cert_no
+            parameterValues:
+              - name: regex
+                value: "^[1-9]\\d{5}(19|20)\\d{2}(0[1-9]|1[0-2])(0[1-9]|[12]\\d|3[01])\\d{3}[\\dX]$"
+          
+          # 手机号格式校验 (11位)
+          - testDefinitionName: columnValuesToMatchRegex
+            name: phone_format_check
+            columnName: phone
+            parameterValues:
+              - name: regex
+                value: "^1[3-9]\\d{9}$"
+          
+          # 邮箱格式校验
+          - testDefinitionName: columnValuesToMatchRegex
+            name: email_format_check
+            columnName: email
+            parameterValues:
+              - name: regex
+                value: "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"
+          
+          # 日期格式校验 (YYYY-MM-DD)
+          - testDefinitionName: columnValuesToMatchRegex
+            name: date_format_check
+            columnName: create_date
+            parameterValues:
+              - name: regex
+                value: "^\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01])$"
+
+    sink:
+      type: metadata-rest
+      config: {}
+
+  # --------------------------------------------------------------------------
+  # 1.2 业务枚举值测试
+  # --------------------------------------------------------------------------
+  enum_tests:
+    source:
+      type: TestSuite
+      serviceName: ${SERVICE_NAME}
+      sourceConfig:
+        config:
+          type: TestSuiteConfig
+          entityFullyQualifiedName: ${TABLE_FQN}
+    
+    processor:
+      type: test-suite
+      config:
+        testCases:
+          # 订单状态枚举
+          - testDefinitionName: columnValuesToBeInSet
+            name: order_status_enum_check
+            columnName: order_status
+            parameterValues:
+              - name: columnValues
+                value: "['pending', 'confirmed', 'processing', 'shipped', 'delivered', 'cancelled', 'refunded']"
+          
+          # 支付状态枚举
+          - testDefinitionName: columnValuesToBeInSet
+            name: payment_status_enum_check
+            columnName: payment_status
+            parameterValues:
+              - name: columnValues
+                value: "['unpaid', 'paid', 'refunding', 'refunded', 'failed']"
+          
+          # 性别枚举
+          - testDefinitionName: columnValuesToBeInSet
+            name: gender_enum_check
+            columnName: gender
+            parameterValues:
+              - name: columnValues
+                value: "['male', 'female', 'unknown']"
+
+    sink:
+      type: metadata-rest
+      config: {}
+
+# ============================================================================
+# 二、完整性测试套件
+# ============================================================================
+completeness_test_suite:
+  source:
+    type: TestSuite
+    serviceName: ${SERVICE_NAME}
+    sourceConfig:
+      config:
+        type: TestSuiteConfig
+        entityFullyQualifiedName: ${TABLE_FQN}
+  
+  processor:
+    type: test-suite
+    config:
+      testCases:
+        # 主键非空校验
+        - testDefinitionName: columnValuesToBeNotNull
+          name: id_not_null
+          columnName: id
+        
+        # 客户名称非空校验
+        - testDefinitionName: columnValuesToBeNotNull
+          name: customer_name_not_null
+          columnName: customer_name
+        
+        # 身份证号非空校验
+        - testDefinitionName: columnValuesToBeNotNull
+          name: cert_no_not_null
+          columnName: cert_no
+        
+        # 手机号非空校验
+        - testDefinitionName: columnValuesToBeNotNull
+          name: phone_not_null
+          columnName: phone
+        
+        # 创建时间非空校验
+        - testDefinitionName: columnValuesToBeNotNull
+          name: create_time_not_null
+          columnName: create_time
+        
+        # 更新时间非空校验
+        - testDefinitionName: columnValuesToBeNotNull
+          name: update_time_not_null
+          columnName: update_time
+        
+        # 主键唯一性校验
+        - testDefinitionName: columnValuesToBeUnique
+          name: id_unique
+          columnName: id
+        
+        # 表行数下限校验 (确保数据存在)
+        - testDefinitionName: tableRowCountToBeBetween
+          name: row_count_min_check
+          parameterValues:
+            - name: minValue
+              value: "1"
+        
+        # 表行数上限校验 (异常数据量检测)
+        - testDefinitionName: tableRowCountToBeBetween
+          name: row_count_max_check
+          parameterValues:
+            - name: maxValue
+              value: "10000000"  # 根据业务调整
+
+  sink:
+    type: metadata-rest
+    config: {}
+
+# ============================================================================
+# 三、准确性测试套件
+# ============================================================================
+accuracy_test_suite:
+  source:
+    type: TestSuite
+    serviceName: ${SERVICE_NAME}
+    sourceConfig:
+      config:
+        type: TestSuiteConfig
+        entityFullyQualifiedName: ${TABLE_FQN}
+  
+  processor:
+    type: test-suite
+    config:
+      testCases:
+        # 年龄范围校验 (0-120岁)
+        - testDefinitionName: columnValueMinToBeBetween
+          name: age_min_check
+          columnName: age
+          parameterValues:
+            - name: minValue
+              value: "0"
+        
+        - testDefinitionName: columnValueMaxToBeBetween
+          name: age_max_check
+          columnName: age
+          parameterValues:
+            - name: maxValue
+              value: "120"
+        
+        # 金额非负校验
+        - testDefinitionName: columnValueMinToBeBetween
+          name: amount_non_negative
+          columnName: amount
+          parameterValues:
+            - name: minValue
+              value: "0"
+        
+        # 订单金额非负校验
+        - testDefinitionName: columnValueMinToBeBetween
+          name: order_amount_non_negative
+          columnName: order_amount
+          parameterValues:
+            - name: minValue
+              value: "0"
+        
+        # 数量非负校验
+        - testDefinitionName: columnValueMinToBeBetween
+          name: quantity_non_negative
+          columnName: quantity
+          parameterValues:
+            - name: minValue
+              value: "0"
+        
+        # 评分范围校验 (0-5分)
+        - testDefinitionName: columnValueMinToBeBetween
+          name: rating_min_check
+          columnName: rating
+          parameterValues:
+            - name: minValue
+              value: "0"
+        
+        - testDefinitionName: columnValueMaxToBeBetween
+          name: rating_max_check
+          columnName: rating
+          parameterValues:
+            - name: maxValue
+              value: "5"
+        
+        # 无重复数据检测 (基于主键)
+        - testDefinitionName: tableCustomSQLQuery
+          name: duplicate_detection
+          parameterValues:
+            - name: sqlExpression
+              value: "SELECT COUNT(*) - COUNT(DISTINCT id) FROM ${TABLE_NAME}"
+            - name: strategy
+              value: "COUNT"
+
+  sink:
+    type: metadata-rest
+    config: {}
+
+# ============================================================================
+# 四、一致性测试套件
+# ============================================================================
+consistency_test_suite:
+  source:
+    type: TestSuite
+    serviceName: ${SERVICE_NAME}
+    sourceConfig:
+      config:
+        type: TestSuiteConfig
+        entityFullyQualifiedName: ${SOURCE_TABLE_FQN}
+  
+  processor:
+    type: test-suite
+    config:
+      testCases:
+        # 跨表数据一致性比对 (TableDiff)
+        - testDefinitionName: tableDiff
+          name: source_target_consistency
+          parameterValues:
+            - name: table2
+              value: "${TARGET_TABLE_FQN}"  # 目标表FQN
+            - name: keyColumns
+              value: "['id']"  # 主键列
+            - name: threshold
+              value: "0"  # 允许差异行数，0表示完全一致
+        
+        # 订单金额与支付金额一致性
+        - testDefinitionName: tableCustomSQLQuery
+          name: order_payment_consistency
+          parameterValues:
+            - name: sqlExpression
+              value: |
+                SELECT COUNT(*) 
+                FROM orders o 
+                JOIN payments p ON o.order_id = p.order_id 
+                WHERE o.amount != p.amount
+            - name: strategy
+              value: "COUNT"
+        
+        # 父子订单金额汇总一致性
+        - testDefinitionName: tableCustomSQLQuery
+          name: parent_child_amount_consistency
+          parameterValues:
+            - name: sqlExpression
+              value: |
+                SELECT COUNT(*) 
+                FROM parent_orders p 
+                WHERE p.amount != (
+                  SELECT COALESCE(SUM(c.amount), 0) 
+                  FROM child_orders c 
+                  WHERE c.parent_id = p.id
+                )
+            - name: strategy
+              value: "COUNT"
+
+  sink:
+    type: metadata-rest
+    config: {}
+
+# ============================================================================
+# 五、时效性测试套件
+# ============================================================================
+timeliness_test_suite:
+  source:
+    type: TestSuite
+    serviceName: ${SERVICE_NAME}
+    sourceConfig:
+      config:
+        type: TestSuiteConfig
+        entityFullyQualifiedName: ${TABLE_FQN}
+  
+  processor:
+    type: test-suite
+    config:
+      testCases:
+        # 数据更新延迟监控 (24小时内)
+        - testDefinitionName: tableCustomSQLQuery
+          name: update_latency_check
+          parameterValues:
+            - name: sqlExpression
+              value: "SELECT TIMESTAMPDIFF(HOUR, MAX(update_time), NOW()) FROM ${TABLE_NAME}"
+            - name: strategy
+              value: "COUNT"
+        
+        # 数据时间顺序校验
+        - testDefinitionName: tableCustomSQLQuery
+          name: time_sequence_check
+          parameterValues:
+            - name: sqlExpression
+              value: |
+                SELECT COUNT(*) 
+                FROM ${TABLE_NAME} 
+                WHERE create_time > update_time 
+                   OR create_time > CURRENT_TIMESTAMP
+            - name: strategy
+              value: "COUNT"
+        
+        # 历史数据时间有效性
+        - testDefinitionName: tableCustomSQLQuery
+          name: historical_time_validity
+          parameterValues:
+            - name: sqlExpression
+              value: "SELECT COUNT(*) FROM ${TABLE_NAME} WHERE create_date > CURRENT_DATE"
+            - name: strategy
+              value: "COUNT"
+
+  sink:
+    type: metadata-rest
+    config: {}
+
+# ============================================================================
+# 六、可访问性测试套件
+# ============================================================================
+accessibility_test_suite:
+  source:
+    type: TestSuite
+    serviceName: ${SERVICE_NAME}
+    sourceConfig:
+      config:
+        type: TestSuiteConfig
+        entityFullyQualifiedName: ${TABLE_FQN}
+  
+  processor:
+    type: test-suite
+    config:
+      testCases:
+        # 表可访问性校验
+        - testDefinitionName: tableCustomSQLQuery
+          name: table_accessible
+          parameterValues:
+            - name: sqlExpression
+              value: "SELECT 1 FROM ${TABLE_NAME} LIMIT 1"
+            - name: strategy
+              value: "COUNT"
+        
+        # 表包含预期列
+        - testDefinitionName: tableColumnCountToBeBetween
+          name: column_count_check
+          parameterValues:
+            - name: minColValue
+              value: "5"  # 最少5列
+            - name: maxColValue
+              value: "100"  # 最多100列
+        
+        # 关键列存在性校验
+        - testDefinitionName: tableCustomSQLQuery
+          name: required_columns_exist
+          parameterValues:
+            - name: sqlExpression
+              value: |
+                SELECT COUNT(*) 
+                FROM information_schema.columns 
+                WHERE table_name = '${TABLE_NAME}' 
+                  AND column_name IN ('id', 'name', 'create_time')
+            - name: strategy
+              value: "COUNT"
+
+  sink:
+    type: metadata-rest
+    config: {}
+
+# ============================================================================
+# 全量质量评价测试套件 (包含所有维度)
+# ============================================================================
+full_quality_assessment:
+  source:
+    type: TestSuite
+    serviceName: ${SERVICE_NAME}
+    sourceConfig:
+      config:
+        type: TestSuiteConfig
+        entityFullyQualifiedName: ${TABLE_FQN}
+  
+  processor:
+    type: test-suite
+    config:
+      testCases:
+        # ===== 完整性测试 =====
+        - testDefinitionName: columnValuesToBeNotNull
+          name: key_field_not_null
+          columnName: id
+        - testDefinitionName: columnValuesToBeNotNull
+          name: name_not_null
+          columnName: name
+        - testDefinitionName: columnValuesToBeNotNull
+          name: create_time_not_null
+          columnName: create_time
+        - testDefinitionName: tableRowCountToBeBetween
+          name: row_count_check
+          parameterValues:
+            - name: minValue
+              value: "1"
+        
+        # ===== 准确性测试 =====
+        - testDefinitionName: columnValueMinToBeBetween
+          name: amount_min_check
+          columnName: amount
+          parameterValues:
+            - name: minValue
+              value: "0"
+        
+        # ===== 规范性测试 =====
+        - testDefinitionName: columnValuesToMatchRegex
+          name: phone_format_check
+          columnName: phone
+          parameterValues:
+            - name: regex
+              value: "^1[3-9]\\d{9}$"
+        - testDefinitionName: columnValuesToBeInSet
+          name: status_enum_check
+          columnName: status
+          parameterValues:
+            - name: columnValues
+              value: "['active', 'inactive', 'pending']"
+        
+        # ===== 唯一性测试 =====
+        - testDefinitionName: columnValuesToBeUnique
+          name: id_unique_check
+          columnName: id
+        
+        # ===== 时效性测试 =====
+        - testDefinitionName: tableCustomSQLQuery
+          name: update_freshness
+          parameterValues:
+            - name: sqlExpression
+              value: "SELECT TIMESTAMPDIFF(DAY, MAX(update_time), NOW()) FROM ${TABLE_NAME}"
+            - name: strategy
+              value: "COUNT"
+
+  sink:
+    type: metadata-rest
+    config: {}
+
+workflowConfig:
+  openMetadataServerConfig:
+    hostPort: ${OM_HOST_PORT}
+    authProvider: openmetadata
+    securityConfig:
+      jwtToken: ${OM_JWT_TOKEN}

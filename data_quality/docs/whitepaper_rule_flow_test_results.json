@@ -1,0 +1,523 @@
+{
+  "test_result": "FAIL",
+  "tested_at": "2026-06-19T14:07:33",
+  "whitepaper": "C:\\Users\\19571\\Desktop\\数据资产项目\\数据资产管理运营平台技术白皮书.docx",
+  "whitepaper_rule_count": 85,
+  "covered_rule_count": 0,
+  "added_rule_test_count": 0,
+  "existing_rule_test_count": 0,
+  "library_total_rules": 178,
+  "rule_results": [],
+  "failures": [
+    {
+      "whitepaper_key": "T2-R1-S-F01",
+      "whitepaper_rule_id": "S-F01",
+      "display_name": "字符串格式统一校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T2-R2-S-F02",
+      "whitepaper_rule_id": "S-F02",
+      "display_name": "数值格式统一校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T2-R3-S-F03",
+      "whitepaper_rule_id": "S-F03",
+      "display_name": "时间格式统一校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T2-R4-S-F04",
+      "whitepaper_rule_id": "S-F04",
+      "display_name": "特殊字段格式校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T2-R5-S-F05",
+      "whitepaper_rule_id": "S-F05",
+      "display_name": "日期有效性校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T3-R1-S-C01",
+      "whitepaper_rule_id": "S-C01",
+      "display_name": "标准编码符合性校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T3-R2-S-C02",
+      "whitepaper_rule_id": "S-C02",
+      "display_name": "自定义编码规则校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T3-R3-S-C03",
+      "whitepaper_rule_id": "S-C03",
+      "display_name": "编码长度统一校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T3-R4-S-C04",
+      "whitepaper_rule_id": "S-C04",
+      "display_name": "编码大小写统一校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T4-R1-S-N01",
+      "whitepaper_rule_id": "S-N01",
+      "display_name": "数据值命名统一校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T4-R2-S-N02",
+      "whitepaper_rule_id": "S-N02",
+      "display_name": "无特殊字符校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T4-R3-S-N03",
+      "whitepaper_rule_id": "S-N03",
+      "display_name": "大小写统一校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T5-R1-S-V01",
+      "whitepaper_rule_id": "S-V01",
+      "display_name": "枚举值规范性校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T5-R2-S-V02",
+      "whitepaper_rule_id": "S-V02",
+      "display_name": "数值值域规范性校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T5-R3-S-V03",
+      "whitepaper_rule_id": "S-V03",
+      "display_name": "布尔值格式统一校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T6-R1-S-U01",
+      "whitepaper_rule_id": "S-U01",
+      "display_name": "数值单位统一校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T6-R2-S-U02",
+      "whitepaper_rule_id": "S-U02",
+      "display_name": "单位与数值一致性校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T7-R2-C-F01",
+      "whitepaper_rule_id": "C-F01",
+      "display_name": "核心字段强制非空校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T7-R3-C-F02",
+      "whitepaper_rule_id": "C-F02",
+      "display_name": "非核心字段覆盖率校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T7-R4-C-F03",
+      "whitepaper_rule_id": "C-F03",
+      "display_name": "字段非空白值校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T7-R5-C-F04",
+      "whitepaper_rule_id": "C-F04",
+      "display_name": "枚举字段兜底值占比控制",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T7-R7-C-R01",
+      "whitepaper_rule_id": "C-R01",
+      "display_name": "关键业务记录无缺失校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T7-R8-C-R02",
+      "whitepaper_rule_id": "C-R02",
+      "display_name": "记录数量符合预期校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T7-R9-C-R03",
+      "whitepaper_rule_id": "C-R03",
+      "display_name": "分区数据完整性校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T7-R11-C-L01",
+      "whitepaper_rule_id": "C-L01",
+      "display_name": "关联字段存在性校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T7-R12-C-L02",
+      "whitepaper_rule_id": "C-L02",
+      "display_name": "维度信息完整性校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T7-R13-C-L03",
+      "whitepaper_rule_id": "C-L03",
+      "display_name": "组合字段完整性校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T7-R15-C-B01",
+      "whitepaper_rule_id": "C-B01",
+      "display_name": "状态关联字段非空校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T7-R16-C-B02",
+      "whitepaper_rule_id": "C-B02",
+      "display_name": "流程节点完整性校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T8-R2-A-N01",
+      "whitepaper_rule_id": "A-N01",
+      "display_name": "数值非负校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T8-R3-A-N02",
+      "whitepaper_rule_id": "A-N02",
+      "display_name": "数值合理范围校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T8-R4-A-N03",
+      "whitepaper_rule_id": "A-N03",
+      "display_name": "数值精度准确性校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T8-R5-A-N04",
+      "whitepaper_rule_id": "A-N04",
+      "display_name": "计算逻辑准确性校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T8-R7-A-T01",
+      "whitepaper_rule_id": "A-T01",
+      "display_name": "时间先后逻辑校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T8-R8-A-T02",
+      "whitepaper_rule_id": "A-T02",
+      "display_name": "时间合理性校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T8-R9-A-T03",
+      "whitepaper_rule_id": "A-T03",
+      "display_name": "时间状态一致性校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T8-R11-A-F01",
+      "whitepaper_rule_id": "A-F01",
+      "display_name": "特殊字段有效性校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T8-R12-A-F02",
+      "whitepaper_rule_id": "A-F02",
+      "display_name": "编码有效性校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T8-R14-A-C01",
+      "whitepaper_rule_id": "A-C01",
+      "display_name": "主从表数据一致性校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T8-R15-A-C02",
+      "whitepaper_rule_id": "A-C02",
+      "display_name": "上下游系统数据一致性校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T8-R17-A-B01",
+      "whitepaper_rule_id": "A-B01",
+      "display_name": "状态与业务场景一致性校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T8-R18-A-B02",
+      "whitepaper_rule_id": "A-B02",
+      "display_name": "枚举值业务合理性校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T8-R19-A-B03",
+      "whitepaper_rule_id": "A-B03",
+      "display_name": "依赖关系准确性校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T9-R2-CS-T01",
+      "whitepaper_rule_id": "CS-T01",
+      "display_name": "主从表核心字段一致性校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T9-R3-CS-T02",
+      "whitepaper_rule_id": "CS-T02",
+      "display_name": "关联表编码一致性校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T9-R4-CS-T03",
+      "whitepaper_rule_id": "CS-T03",
+      "display_name": "主从表关联完整性一致性校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T9-R6-CS-S01",
+      "whitepaper_rule_id": "CS-S01",
+      "display_name": "上下游系统核心数据一致性校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T9-R7-CS-S02",
+      "whitepaper_rule_id": "CS-S02",
+      "display_name": "跨系统编码 / 格式一致性校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T9-R8-CS-S03",
+      "whitepaper_rule_id": "CS-S03",
+      "display_name": "跨系统数据同步时效性一致性校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T9-R10-CS-F01",
+      "whitepaper_rule_id": "CS-F01",
+      "display_name": "字段格式统一校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T9-R11-CS-F02",
+      "whitepaper_rule_id": "CS-F02",
+      "display_name": "编码规则统一校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T9-R12-CS-F03",
+      "whitepaper_rule_id": "CS-F03",
+      "display_name": "大小写 / 特殊字符一致性校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T9-R14-CS-C01",
+      "whitepaper_rule_id": "CS-C01",
+      "display_name": "同指标计算逻辑一致性校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T9-R15-CS-C02",
+      "whitepaper_rule_id": "CS-C02",
+      "display_name": "汇总数据与明细数据一致性校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T9-R20-CS-B01",
+      "whitepaper_rule_id": "CS-B01",
+      "display_name": "枚举值定义一致性校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T9-R21-CS-B02",
+      "whitepaper_rule_id": "CS-B02",
+      "display_name": "业务阈值一致性校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T9-R22-CS-B03",
+      "whitepaper_rule_id": "CS-B03",
+      "display_name": "数据状态流转一致性校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T10-R2-T-F01",
+      "whitepaper_rule_id": "T-F01",
+      "display_name": "实时数据新鲜度校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T10-R3-T-F02",
+      "whitepaper_rule_id": "T-F02",
+      "display_name": "批量数据新鲜度校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T10-R4-T-F03",
+      "whitepaper_rule_id": "T-F03",
+      "display_name": "核心业务数据新鲜度校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T10-R6-T-D01",
+      "whitepaper_rule_id": "T-D01",
+      "display_name": "数据采集延迟校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T10-R7-T-D02",
+      "whitepaper_rule_id": "T-D02",
+      "display_name": "数据同步延迟校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T10-R8-T-D03",
+      "whitepaper_rule_id": "T-D03",
+      "display_name": "数据加工延迟校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T10-R10-T-L01",
+      "whitepaper_rule_id": "T-L01",
+      "display_name": "时间字段合理性校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T10-R11-T-L02",
+      "whitepaper_rule_id": "T-L02",
+      "display_name": "时间先后逻辑校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T10-R12-T-L03",
+      "whitepaper_rule_id": "T-L03",
+      "display_name": "时间与状态一致性校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T10-R14-T-B01",
+      "whitepaper_rule_id": "T-B01",
+      "display_name": "批次更新时间校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T10-R15-T-B02",
+      "whitepaper_rule_id": "T-B02",
+      "display_name": "批次数据完整性校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T10-R16-T-B03",
+      "whitepaper_rule_id": "T-B03",
+      "display_name": "批次同步时效性校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T10-R18-T-E01",
+      "whitepaper_rule_id": "T-E01",
+      "display_name": "临时数据过期校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T10-R19-T-E02",
+      "whitepaper_rule_id": "T-E02",
+      "display_name": "业务数据过期校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T11-R2-A-C01",
+      "whitepaper_rule_id": "A-C01",
+      "display_name": "存储介质可达性校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T11-R3-A-C02",
+      "whitepaper_rule_id": "A-C02",
+      "display_name": "访问接口可用性校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T11-R4-A-C03",
+      "whitepaper_rule_id": "A-C03",
+      "display_name": "跨网络访问可达性校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T11-R6-A-P01",
+      "whitepaper_rule_id": "A-P01",
+      "display_name": "授权用户权限有效性校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T11-R7-A-P02",
+      "whitepaper_rule_id": "A-P02",
+      "display_name": "权限粒度适配性校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T11-R8-A-P03",
+      "whitepaper_rule_id": "A-P03",
+      "display_name": "临时访问权限时效性校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T11-R10-A-S01",
+      "whitepaper_rule_id": "A-S01",
+      "display_name": "数据查询响应时间校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T11-R11-A-S02",
+      "whitepaper_rule_id": "A-S02",
+      "display_name": "批量数据下载速度校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T11-R12-A-S03",
+      "whitepaper_rule_id": "A-S03",
+      "display_name": "高并发访问稳定性校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T11-R14-A-R01",
+      "whitepaper_rule_id": "A-R01",
+      "display_name": "数据存储路径可达性校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T11-R15-A-R02",
+      "whitepaper_rule_id": "A-R02",
+      "display_name": "数据目录 / 元数据可用性校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T11-R16-A-R03",
+      "whitepaper_rule_id": "A-R03",
+      "display_name": "历史数据回溯可达性校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T11-R18-A-M01",
+      "whitepaper_rule_id": "A-M01",
+      "display_name": "数据格式兼容性校验",
+      "error": "string indices must be integers"
+    },
+    {
+      "whitepaper_key": "T11-R19-A-M02",
+      "whitepaper_rule_id": "A-M02",
+      "display_name": "版本兼容性校验",
+      "error": "string indices must be integers"
+    }
+  ]
+}
