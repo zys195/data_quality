@@ -1,0 +1,4086 @@
+{
+  "test_title": "数据质量规则全量测试报告",
+  "tested_at": "2026-06-19T21:17:45",
+  "total_rules": 178,
+  "passed": 174,
+  "warnings": 4,
+  "errors": 0,
+  "pass_rate": 0.9775,
+  "results": [
+    {
+      "seq": 1,
+      "rule_id": "A-C03",
+      "display_name": "跨网络访问可达性校验",
+      "dimension": "accessibility",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则A-C03测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 2,
+      "rule_id": "A-M01",
+      "display_name": "数据格式兼容性校验",
+      "dimension": "accessibility",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则A-M01测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 3,
+      "rule_id": "A-M02",
+      "display_name": "版本兼容性校验",
+      "dimension": "accessibility",
+      "severity": "HIGH",
+      "entity_type": "API",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则A-M02测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 4,
+      "rule_id": "A-P01",
+      "display_name": "授权用户权限有效性校验",
+      "dimension": "accessibility",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则A-P01测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 5,
+      "rule_id": "A-P02",
+      "display_name": "权限粒度适配性校验",
+      "dimension": "accessibility",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则A-P02测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 6,
+      "rule_id": "A-P03",
+      "display_name": "临时访问权限时效性校验",
+      "dimension": "accessibility",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则A-P03测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 7,
+      "rule_id": "A-R01",
+      "display_name": "数据存储路径可达性校验",
+      "dimension": "accessibility",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则A-R01测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 8,
+      "rule_id": "A-R02",
+      "display_name": "数据目录 / 元数据可用性校验",
+      "dimension": "accessibility",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则A-R02测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 9,
+      "rule_id": "A-R03",
+      "display_name": "历史数据回溯可达性校验",
+      "dimension": "accessibility",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则A-R03测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 10,
+      "rule_id": "A-S01",
+      "display_name": "数据查询响应时间校验",
+      "dimension": "accessibility",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则A-S01测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 11,
+      "rule_id": "A-S02",
+      "display_name": "批量数据下载速度校验",
+      "dimension": "accessibility",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则A-S02测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 12,
+      "rule_id": "A-S03",
+      "display_name": "高并发访问稳定性校验",
+      "dimension": "accessibility",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则A-S03测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 13,
+      "rule_id": "AC-C01",
+      "display_name": "表可访问性校验",
+      "dimension": "accessibility",
+      "severity": "CRITICAL",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则AC-C01测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 14,
+      "rule_id": "AC-P01",
+      "display_name": "访问权限校验",
+      "dimension": "accessibility",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则AC-P01测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 15,
+      "rule_id": "AC-S01",
+      "display_name": "查询响应时效校验",
+      "dimension": "accessibility",
+      "severity": "MEDIUM",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则AC-S01测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 16,
+      "rule_id": "AC-S02",
+      "display_name": "API接口可用性校验",
+      "dimension": "accessibility",
+      "severity": "HIGH",
+      "entity_type": "API",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则AC-S02测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 17,
+      "rule_id": "AC-W01",
+      "display_name": "数据服务可用率校验",
+      "dimension": "accessibility",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则AC-W01测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 18,
+      "rule_id": "AC-W02",
+      "display_name": "最小权限访问校验",
+      "dimension": "accessibility",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则AC-W02测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 19,
+      "rule_id": "AC-W03",
+      "display_name": "敏感字段脱敏可访问校验",
+      "dimension": "accessibility",
+      "severity": "CRITICAL",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则AC-W03测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 20,
+      "rule_id": "AC-W04",
+      "display_name": "数据目录可检索校验",
+      "dimension": "accessibility",
+      "severity": "MEDIUM",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则AC-W04测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 21,
+      "rule_id": "AC-W05",
+      "display_name": "元数据说明可理解性校验",
+      "dimension": "accessibility",
+      "severity": "LOW",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则AC-W05测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 22,
+      "rule_id": "AC-W06",
+      "display_name": "数据责任人可联系校验",
+      "dimension": "accessibility",
+      "severity": "MEDIUM",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则AC-W06测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 23,
+      "rule_id": "AC-W07",
+      "display_name": "查询成功率校验",
+      "dimension": "accessibility",
+      "severity": "MEDIUM",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则AC-W07测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 24,
+      "rule_id": "AC-W08",
+      "display_name": "索引统计信息可用校验",
+      "dimension": "accessibility",
+      "severity": "MEDIUM",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则AC-W08测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 25,
+      "rule_id": "AC-W09",
+      "display_name": "备份恢复可用性校验",
+      "dimension": "accessibility",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则AC-W09测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 26,
+      "rule_id": "AC-W10",
+      "display_name": "访问审计日志可用校验",
+      "dimension": "accessibility",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则AC-W10测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 27,
+      "rule_id": "WP-A-C01",
+      "display_name": "存储介质可达性校验",
+      "dimension": "accessibility",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则WP-A-C01测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 28,
+      "rule_id": "WP-A-C02",
+      "display_name": "访问接口可用性校验",
+      "dimension": "accessibility",
+      "severity": "HIGH",
+      "entity_type": "API",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则WP-A-C02测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 29,
+      "rule_id": "A-B01",
+      "display_name": "多字段条件校验",
+      "dimension": "accuracy",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则A-B01测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 30,
+      "rule_id": "A-B02",
+      "display_name": "枚举值业务合理性校验",
+      "dimension": "accuracy",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则A-B02测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 31,
+      "rule_id": "A-B03",
+      "display_name": "依赖关系准确性校验",
+      "dimension": "accuracy",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则A-B03测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 32,
+      "rule_id": "A-C01",
+      "display_name": "主从表数据一致性校验",
+      "dimension": "accuracy",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则A-C01测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 33,
+      "rule_id": "A-C02",
+      "display_name": "上下游系统数据一致性校验",
+      "dimension": "accuracy",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则A-C02测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 34,
+      "rule_id": "A-F01",
+      "display_name": "特殊字段有效性校验",
+      "dimension": "accuracy",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则A-F01测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 35,
+      "rule_id": "A-F02",
+      "display_name": "编码有效性校验",
+      "dimension": "accuracy",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则A-F02测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 36,
+      "rule_id": "A-L01",
+      "display_name": "长度校验",
+      "dimension": "accuracy",
+      "severity": "MEDIUM",
+      "entity_type": "COLUMN",
+      "target_column": "name",
+      "data_flag": "length",
+      "trial_passed": true,
+      "total_rows": 2,
+      "failure_count": 0,
+      "pass_rate": 1.0,
+      "result": "WARN",
+      "invalid_samples": [],
+      "error": null
+    },
+    {
+      "seq": 37,
+      "rule_id": "A-N01",
+      "display_name": "数值型格式校验",
+      "dimension": "accuracy",
+      "severity": "HIGH",
+      "entity_type": "COLUMN",
+      "target_column": "amount",
+      "data_flag": "numeric",
+      "trial_passed": true,
+      "total_rows": 2,
+      "failure_count": 0,
+      "pass_rate": 1.0,
+      "result": "WARN",
+      "invalid_samples": [],
+      "error": null
+    },
+    {
+      "seq": 38,
+      "rule_id": "A-N02",
+      "display_name": "取值范围校验",
+      "dimension": "accuracy",
+      "severity": "MEDIUM",
+      "entity_type": "COLUMN",
+      "target_column": "age",
+      "data_flag": "range",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "200",
+          "reason": "字段值大于最大阈值"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 39,
+      "rule_id": "A-N03",
+      "display_name": "金额精度校验",
+      "dimension": "accuracy",
+      "severity": "MEDIUM",
+      "entity_type": "COLUMN",
+      "target_column": "amount",
+      "data_flag": "precision",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "100.123",
+          "reason": "数值小数位超过允许精度"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 40,
+      "rule_id": "A-N04",
+      "display_name": "计算逻辑准确性校验",
+      "dimension": "accuracy",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则A-N04测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 41,
+      "rule_id": "A-T01",
+      "display_name": "时间先后逻辑校验",
+      "dimension": "accuracy",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则A-T01测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 42,
+      "rule_id": "A-T02",
+      "display_name": "未来时间校验",
+      "dimension": "accuracy",
+      "severity": "HIGH",
+      "entity_type": "COLUMN",
+      "target_column": "event_time",
+      "data_flag": "future_time",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "2099-01-01 00:00:00",
+          "reason": "时间晚于允许窗口"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 43,
+      "rule_id": "A-T03",
+      "display_name": "时间状态一致性校验",
+      "dimension": "accuracy",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则A-T03测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 44,
+      "rule_id": "A-W01",
+      "display_name": "金额非负准确性校验",
+      "dimension": "accuracy",
+      "severity": "HIGH",
+      "entity_type": "COLUMN",
+      "target_column": "amount",
+      "data_flag": "range",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "abc",
+          "reason": "字段值无法转换为数值"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 45,
+      "rule_id": "A-W02",
+      "display_name": "百分比范围准确性校验",
+      "dimension": "accuracy",
+      "severity": "MEDIUM",
+      "entity_type": "COLUMN",
+      "target_column": "salary",
+      "data_flag": "range",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "-5000",
+          "reason": "字段值小于最小阈值"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 46,
+      "rule_id": "A-W03",
+      "display_name": "纬度范围准确性校验",
+      "dimension": "accuracy",
+      "severity": "MEDIUM",
+      "entity_type": "COLUMN",
+      "target_column": "amount",
+      "data_flag": "precision",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 2,
+      "pass_rate": 0.0,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 0,
+          "value": "100.00",
+          "reason": "字段值大于最大阈值"
+        },
+        {
+          "row_index": 1,
+          "value": "100.123",
+          "reason": "字段值大于最大阈值"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 47,
+      "rule_id": "A-W04",
+      "display_name": "经度范围准确性校验",
+      "dimension": "accuracy",
+      "severity": "MEDIUM",
+      "entity_type": "COLUMN",
+      "target_column": "amount",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "abc",
+          "reason": "规则A-W04测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 48,
+      "rule_id": "A-W05",
+      "display_name": "身份证出生日期准确性校验",
+      "dimension": "accuracy",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则A-W05测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 49,
+      "rule_id": "A-W06",
+      "display_name": "身份证性别准确性校验",
+      "dimension": "accuracy",
+      "severity": "MEDIUM",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则A-W06测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 50,
+      "rule_id": "A-W07",
+      "display_name": "数量整数非负校验",
+      "dimension": "accuracy",
+      "severity": "HIGH",
+      "entity_type": "COLUMN",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": true,
+      "total_rows": 2,
+      "failure_count": 0,
+      "pass_rate": 1.0,
+      "result": "WARN",
+      "invalid_samples": [],
+      "error": null
+    },
+    {
+      "seq": 51,
+      "rule_id": "A-W08",
+      "display_name": "税额计算准确性校验",
+      "dimension": "accuracy",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "event_time",
+      "data_flag": "future_time",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "2099-01-01 00:00:00",
+          "reason": "时间晚于允许窗口"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 52,
+      "rule_id": "A-W09",
+      "display_name": "脏占位值准确性校验",
+      "dimension": "accuracy",
+      "severity": "MEDIUM",
+      "entity_type": "COLUMN",
+      "target_column": "event_time",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "2099-01-01 00:00:00",
+          "reason": "规则A-W09测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 53,
+      "rule_id": "A-W10",
+      "display_name": "年龄出生日期准确性校验",
+      "dimension": "accuracy",
+      "severity": "MEDIUM",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则A-W10测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 54,
+      "rule_id": "WP-A-B01",
+      "display_name": "状态与业务场景一致性校验",
+      "dimension": "accuracy",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则WP-A-B01测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 55,
+      "rule_id": "WP-A-N01",
+      "display_name": "数值非负校验",
+      "dimension": "accuracy",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则WP-A-N01测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 56,
+      "rule_id": "WP-A-N02",
+      "display_name": "数值合理范围校验",
+      "dimension": "accuracy",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则WP-A-N02测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 57,
+      "rule_id": "WP-A-N03",
+      "display_name": "数值精度准确性校验",
+      "dimension": "accuracy",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则WP-A-N03测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 58,
+      "rule_id": "WP-A-T02",
+      "display_name": "时间合理性校验",
+      "dimension": "accuracy",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则WP-A-T02测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 59,
+      "rule_id": "C-B01",
+      "display_name": "状态关联字段非空校验",
+      "dimension": "completeness",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则C-B01测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 60,
+      "rule_id": "C-B02",
+      "display_name": "流程节点完整性校验",
+      "dimension": "completeness",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则C-B02测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 61,
+      "rule_id": "C-F01",
+      "display_name": "必填字段空值校验",
+      "dimension": "completeness",
+      "severity": "CRITICAL",
+      "entity_type": "COLUMN",
+      "target_column": "name",
+      "data_flag": "not_null",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "",
+          "reason": "字段为空或仅包含空白字符"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 62,
+      "rule_id": "C-F02",
+      "display_name": "字段填充率校验",
+      "dimension": "completeness",
+      "severity": "MEDIUM",
+      "entity_type": "COLUMN",
+      "target_column": "desc",
+      "data_flag": "fill_rate",
+      "trial_passed": true,
+      "total_rows": 2,
+      "failure_count": 0,
+      "pass_rate": 1.0,
+      "result": "WARN",
+      "invalid_samples": [],
+      "error": null
+    },
+    {
+      "seq": 63,
+      "rule_id": "C-F03",
+      "display_name": "空白字符串校验",
+      "dimension": "completeness",
+      "severity": "MEDIUM",
+      "entity_type": "COLUMN",
+      "target_column": "desc",
+      "data_flag": "blank_string",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "   ",
+          "reason": "字段为空或仅包含空白字符"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 64,
+      "rule_id": "C-F04",
+      "display_name": "主键唯一性校验",
+      "dimension": "completeness",
+      "severity": "CRITICAL",
+      "entity_type": "COLUMN",
+      "target_column": "id",
+      "data_flag": "unique",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "PASS-001",
+          "reason": "主键或唯一键重复"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 65,
+      "rule_id": "C-L01",
+      "display_name": "关联完整性校验",
+      "dimension": "completeness",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则C-L01测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 66,
+      "rule_id": "C-L02",
+      "display_name": "维度信息完整性校验",
+      "dimension": "completeness",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则C-L02测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 67,
+      "rule_id": "C-L03",
+      "display_name": "组合字段完整性校验",
+      "dimension": "completeness",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则C-L03测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 68,
+      "rule_id": "C-R01",
+      "display_name": "记录完整性校验",
+      "dimension": "completeness",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则C-R01测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 69,
+      "rule_id": "C-R02",
+      "display_name": "记录数量符合预期校验",
+      "dimension": "completeness",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则C-R02测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 70,
+      "rule_id": "C-R03",
+      "display_name": "分区数据完整性校验",
+      "dimension": "completeness",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则C-R03测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 71,
+      "rule_id": "C-W01",
+      "display_name": "联系方式组合完整性校验",
+      "dimension": "completeness",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则C-W01测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 72,
+      "rule_id": "C-W02",
+      "display_name": "联合业务主键完整性校验",
+      "dimension": "completeness",
+      "severity": "CRITICAL",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则C-W02测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 73,
+      "rule_id": "C-W03",
+      "display_name": "表记录数下限完整性校验",
+      "dimension": "completeness",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则C-W03测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 74,
+      "rule_id": "C-W04",
+      "display_name": "分区数据完整性校验",
+      "dimension": "completeness",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则C-W04测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 75,
+      "rule_id": "C-W05",
+      "display_name": "条件附件完整性校验",
+      "dimension": "completeness",
+      "severity": "MEDIUM",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则C-W05测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 76,
+      "rule_id": "C-W06",
+      "display_name": "经纬度成对完整性校验",
+      "dimension": "completeness",
+      "severity": "MEDIUM",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则C-W06测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 77,
+      "rule_id": "C-W07",
+      "display_name": "起止时间成对完整性校验",
+      "dimension": "completeness",
+      "severity": "MEDIUM",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则C-W07测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 78,
+      "rule_id": "C-W08",
+      "display_name": "状态时间完整性校验",
+      "dimension": "completeness",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则C-W08测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 79,
+      "rule_id": "C-W09",
+      "display_name": "代码名称成对完整性校验",
+      "dimension": "completeness",
+      "severity": "MEDIUM",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则C-W09测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 80,
+      "rule_id": "C-W10",
+      "display_name": "血缘关联对象完整性校验",
+      "dimension": "completeness",
+      "severity": "MEDIUM",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则C-W10测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 81,
+      "rule_id": "WP-C-F01",
+      "display_name": "核心字段强制非空校验",
+      "dimension": "completeness",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则WP-C-F01测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 82,
+      "rule_id": "WP-C-F02",
+      "display_name": "非核心字段覆盖率校验",
+      "dimension": "completeness",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则WP-C-F02测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 83,
+      "rule_id": "WP-C-F03",
+      "display_name": "字段非空白值校验",
+      "dimension": "completeness",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则WP-C-F03测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 84,
+      "rule_id": "WP-C-F04",
+      "display_name": "枚举字段兜底值占比控制",
+      "dimension": "completeness",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则WP-C-F04测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 85,
+      "rule_id": "WP-C-L01",
+      "display_name": "关联字段存在性校验",
+      "dimension": "completeness",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则WP-C-L01测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 86,
+      "rule_id": "WP-C-R01",
+      "display_name": "关键业务记录无缺失校验",
+      "dimension": "completeness",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则WP-C-R01测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 87,
+      "rule_id": "CS-B01",
+      "display_name": "枚举值定义一致性校验",
+      "dimension": "consistency",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则CS-B01测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 88,
+      "rule_id": "CS-B02",
+      "display_name": "业务阈值一致性校验",
+      "dimension": "consistency",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则CS-B02测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 89,
+      "rule_id": "CS-B03",
+      "display_name": "数据状态流转一致性校验",
+      "dimension": "consistency",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则CS-B03测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 90,
+      "rule_id": "CS-C01",
+      "display_name": "计算逻辑一致性校验",
+      "dimension": "consistency",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则CS-C01测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 91,
+      "rule_id": "CS-C02",
+      "display_name": "汇总数据与明细数据一致性校验",
+      "dimension": "consistency",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则CS-C02测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 92,
+      "rule_id": "CS-F01",
+      "display_name": "字段格式统一校验",
+      "dimension": "consistency",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则CS-F01测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 93,
+      "rule_id": "CS-F02",
+      "display_name": "编码规则统一校验",
+      "dimension": "consistency",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则CS-F02测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 94,
+      "rule_id": "CS-F03",
+      "display_name": "大小写 / 特殊字符一致性校验",
+      "dimension": "consistency",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则CS-F03测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 95,
+      "rule_id": "CS-S01",
+      "display_name": "跨系统一致性校验",
+      "dimension": "consistency",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则CS-S01测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 96,
+      "rule_id": "CS-S02",
+      "display_name": "跨系统编码 / 格式一致性校验",
+      "dimension": "consistency",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则CS-S02测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 97,
+      "rule_id": "CS-S03",
+      "display_name": "跨系统数据同步时效性一致性校验",
+      "dimension": "consistency",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则CS-S03测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 98,
+      "rule_id": "CS-T01",
+      "display_name": "主从表核心字段一致性校验",
+      "dimension": "consistency",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则CS-T01测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 99,
+      "rule_id": "CS-T02",
+      "display_name": "关联表编码一致性校验",
+      "dimension": "consistency",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则CS-T02测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 100,
+      "rule_id": "CS-T03",
+      "display_name": "主从表关联完整性一致性校验",
+      "dimension": "consistency",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则CS-T03测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 101,
+      "rule_id": "CS-W01",
+      "display_name": "码值名称字典一致性校验",
+      "dimension": "consistency",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则CS-W01测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 102,
+      "rule_id": "CS-W02",
+      "display_name": "同一实体跨表一致性校验",
+      "dimension": "consistency",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则CS-W02测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 103,
+      "rule_id": "CS-W03",
+      "display_name": "事实维表状态一致性校验",
+      "dimension": "consistency",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则CS-W03测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 104,
+      "rule_id": "CS-W04",
+      "display_name": "主明细金额汇总一致性校验",
+      "dimension": "consistency",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则CS-W04测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 105,
+      "rule_id": "CS-W05",
+      "display_name": "主明细数量一致性校验",
+      "dimension": "consistency",
+      "severity": "MEDIUM",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则CS-W05测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 106,
+      "rule_id": "CS-W06",
+      "display_name": "字典版本一致性校验",
+      "dimension": "consistency",
+      "severity": "MEDIUM",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则CS-W06测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 107,
+      "rule_id": "CS-W07",
+      "display_name": "组织层级一致性校验",
+      "dimension": "consistency",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则CS-W07测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 108,
+      "rule_id": "CS-W08",
+      "display_name": "计量单位换算一致性校验",
+      "dimension": "consistency",
+      "severity": "MEDIUM",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则CS-W08测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 109,
+      "rule_id": "CS-W09",
+      "display_name": "跨系统主键映射一致性校验",
+      "dimension": "consistency",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则CS-W09测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 110,
+      "rule_id": "CS-W10",
+      "display_name": "血缘转换结果一致性校验",
+      "dimension": "consistency",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则CS-W10测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 111,
+      "rule_id": "WP-CS-C01",
+      "display_name": "同指标计算逻辑一致性校验",
+      "dimension": "consistency",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则WP-CS-C01测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 112,
+      "rule_id": "WP-CS-S01",
+      "display_name": "上下游系统核心数据一致性校验",
+      "dimension": "consistency",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则WP-CS-S01测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 113,
+      "rule_id": "N-C01",
+      "display_name": "编码规范性校验",
+      "dimension": "normativity",
+      "severity": "MEDIUM",
+      "entity_type": "COLUMN",
+      "target_column": "code",
+      "data_flag": "regex",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "bad code!",
+          "reason": "字段值不匹配正则规则"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 114,
+      "rule_id": "N-C02",
+      "display_name": "行政区划编码校验",
+      "dimension": "normativity",
+      "severity": "MEDIUM",
+      "entity_type": "COLUMN",
+      "target_column": "region_code",
+      "data_flag": "regex",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "0X0000",
+          "reason": "字段值不匹配正则规则"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 115,
+      "rule_id": "N-F01",
+      "display_name": "公民身份证号码格式校验",
+      "dimension": "normativity",
+      "severity": "HIGH",
+      "entity_type": "COLUMN",
+      "target_column": "id_card",
+      "data_flag": "regex",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "12345",
+          "reason": "字段值不匹配正则规则"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 116,
+      "rule_id": "N-F02",
+      "display_name": "手机号格式校验",
+      "dimension": "normativity",
+      "severity": "HIGH",
+      "entity_type": "COLUMN",
+      "target_column": "phone",
+      "data_flag": "regex",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "abc",
+          "reason": "字段值不匹配正则规则"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 117,
+      "rule_id": "N-F03",
+      "display_name": "车牌号格式校验",
+      "dimension": "normativity",
+      "severity": "MEDIUM",
+      "entity_type": "COLUMN",
+      "target_column": "plate",
+      "data_flag": "regex",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "无效车牌",
+          "reason": "字段值不匹配正则规则"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 118,
+      "rule_id": "N-F04",
+      "display_name": "IMEI格式校验",
+      "dimension": "normativity",
+      "severity": "MEDIUM",
+      "entity_type": "COLUMN",
+      "target_column": "imei",
+      "data_flag": "regex",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "ABC",
+          "reason": "字段值不匹配正则规则"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 119,
+      "rule_id": "N-F05",
+      "display_name": "MAC地址格式校验",
+      "dimension": "normativity",
+      "severity": "MEDIUM",
+      "entity_type": "COLUMN",
+      "target_column": "mac_addr",
+      "data_flag": "regex",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "ZZ:ZZ:ZZ",
+          "reason": "字段值不匹配正则规则"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 120,
+      "rule_id": "N-F06",
+      "display_name": "IP地址格式校验",
+      "dimension": "normativity",
+      "severity": "MEDIUM",
+      "entity_type": "COLUMN",
+      "target_column": "ip_addr",
+      "data_flag": "regex",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "999.999.999.999",
+          "reason": "字段值不匹配正则规则"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 121,
+      "rule_id": "N-F07",
+      "display_name": "URL地址格式校验",
+      "dimension": "normativity",
+      "severity": "MEDIUM",
+      "entity_type": "COLUMN",
+      "target_column": "url",
+      "data_flag": "regex",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "not a url",
+          "reason": "字段值不匹配正则规则"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 122,
+      "rule_id": "N-F08",
+      "display_name": "邮箱格式校验",
+      "dimension": "normativity",
+      "severity": "MEDIUM",
+      "entity_type": "COLUMN",
+      "target_column": "email",
+      "data_flag": "regex",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "bad-email",
+          "reason": "字段值不匹配正则规则"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 123,
+      "rule_id": "N-N01",
+      "display_name": "命名规范性校验",
+      "dimension": "normativity",
+      "severity": "LOW",
+      "entity_type": "COLUMN",
+      "target_column": "name",
+      "data_flag": "regex",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "张@#三\n",
+          "reason": "字段值不匹配正则规则"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 124,
+      "rule_id": "N-V01",
+      "display_name": "值域枚举规范性校验",
+      "dimension": "normativity",
+      "severity": "HIGH",
+      "entity_type": "COLUMN",
+      "target_column": "status",
+      "data_flag": "enum",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "未知状态",
+          "reason": "字段值不在允许枚举集合内"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 125,
+      "rule_id": "N-W01",
+      "display_name": "日期格式规范校验",
+      "dimension": "normativity",
+      "severity": "MEDIUM",
+      "entity_type": "COLUMN",
+      "target_column": "date_val",
+      "data_flag": "regex",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "19/06/2026",
+          "reason": "字段值不匹配正则规则"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 126,
+      "rule_id": "N-W02",
+      "display_name": "时间戳格式规范校验",
+      "dimension": "normativity",
+      "severity": "MEDIUM",
+      "entity_type": "COLUMN",
+      "target_column": "datetime_val",
+      "data_flag": "regex",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "2026/06/19 10时",
+          "reason": "字段值不匹配正则规则"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 127,
+      "rule_id": "N-W03",
+      "display_name": "统一社会信用代码格式校验",
+      "dimension": "normativity",
+      "severity": "HIGH",
+      "entity_type": "COLUMN",
+      "target_column": "credit_code",
+      "data_flag": "regex",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "XYZ",
+          "reason": "字段值不匹配正则规则"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 128,
+      "rule_id": "N-W04",
+      "display_name": "银行卡号格式校验",
+      "dimension": "normativity",
+      "severity": "HIGH",
+      "entity_type": "COLUMN",
+      "target_column": "bank_card",
+      "data_flag": "regex",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "1234",
+          "reason": "字段值不匹配正则规则"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 129,
+      "rule_id": "N-W05",
+      "display_name": "邮政编码格式校验",
+      "dimension": "normativity",
+      "severity": "LOW",
+      "entity_type": "COLUMN",
+      "target_column": "post_code",
+      "data_flag": "regex",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "ABC",
+          "reason": "字段值不匹配正则规则"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 130,
+      "rule_id": "N-W06",
+      "display_name": "币种编码规范校验",
+      "dimension": "normativity",
+      "severity": "MEDIUM",
+      "entity_type": "COLUMN",
+      "target_column": "currency",
+      "data_flag": "regex",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "人民币",
+          "reason": "字段值不匹配正则规则"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 131,
+      "rule_id": "N-W07",
+      "display_name": "国家地区编码规范校验",
+      "dimension": "normativity",
+      "severity": "MEDIUM",
+      "entity_type": "COLUMN",
+      "target_column": "country_code",
+      "data_flag": "regex",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "China",
+          "reason": "字段值不匹配正则规则"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 132,
+      "rule_id": "N-W08",
+      "display_name": "布尔标志值规范校验",
+      "dimension": "normativity",
+      "severity": "MEDIUM",
+      "entity_type": "COLUMN",
+      "target_column": "flag",
+      "data_flag": "enum",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "maybe",
+          "reason": "字段值不在允许枚举集合内"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 133,
+      "rule_id": "N-W09",
+      "display_name": "字段英文命名规范校验",
+      "dimension": "normativity",
+      "severity": "MEDIUM",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则N-W09测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 134,
+      "rule_id": "N-W10",
+      "display_name": "数据表命名规范校验",
+      "dimension": "normativity",
+      "severity": "MEDIUM",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则N-W10测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 135,
+      "rule_id": "S-C01",
+      "display_name": "标准编码符合性校验",
+      "dimension": "normativity",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则S-C01测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 136,
+      "rule_id": "S-C02",
+      "display_name": "自定义编码规则校验",
+      "dimension": "normativity",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则S-C02测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 137,
+      "rule_id": "S-C03",
+      "display_name": "编码长度统一校验",
+      "dimension": "normativity",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则S-C03测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 138,
+      "rule_id": "S-C04",
+      "display_name": "编码大小写统一校验",
+      "dimension": "normativity",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则S-C04测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 139,
+      "rule_id": "S-F01",
+      "display_name": "字符串格式统一校验",
+      "dimension": "normativity",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则S-F01测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 140,
+      "rule_id": "S-F02",
+      "display_name": "数值格式统一校验",
+      "dimension": "normativity",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则S-F02测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 141,
+      "rule_id": "S-F03",
+      "display_name": "时间格式统一校验",
+      "dimension": "normativity",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则S-F03测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 142,
+      "rule_id": "S-F04",
+      "display_name": "特殊字段格式校验",
+      "dimension": "normativity",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则S-F04测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 143,
+      "rule_id": "S-F05",
+      "display_name": "日期有效性校验",
+      "dimension": "normativity",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则S-F05测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 144,
+      "rule_id": "S-N01",
+      "display_name": "数据值命名统一校验",
+      "dimension": "normativity",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则S-N01测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 145,
+      "rule_id": "S-N02",
+      "display_name": "无特殊字符校验",
+      "dimension": "normativity",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则S-N02测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 146,
+      "rule_id": "S-N03",
+      "display_name": "大小写统一校验",
+      "dimension": "normativity",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则S-N03测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 147,
+      "rule_id": "S-U01",
+      "display_name": "数值单位统一校验",
+      "dimension": "normativity",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则S-U01测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 148,
+      "rule_id": "S-U02",
+      "display_name": "单位与数值一致性校验",
+      "dimension": "normativity",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则S-U02测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 149,
+      "rule_id": "S-V01",
+      "display_name": "枚举值规范性校验",
+      "dimension": "normativity",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则S-V01测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 150,
+      "rule_id": "S-V02",
+      "display_name": "数值值域规范性校验",
+      "dimension": "normativity",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则S-V02测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 151,
+      "rule_id": "S-V03",
+      "display_name": "布尔值格式统一校验",
+      "dimension": "normativity",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则S-V03测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 152,
+      "rule_id": "T-B01",
+      "display_name": "批次完成时效校验",
+      "dimension": "timeliness",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则T-B01测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 153,
+      "rule_id": "T-B02",
+      "display_name": "批次数据完整性校验",
+      "dimension": "timeliness",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则T-B02测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 154,
+      "rule_id": "T-B03",
+      "display_name": "批次同步时效性校验",
+      "dimension": "timeliness",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则T-B03测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 155,
+      "rule_id": "T-D01",
+      "display_name": "ETL加工延迟校验",
+      "dimension": "timeliness",
+      "severity": "MEDIUM",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则T-D01测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 156,
+      "rule_id": "T-D02",
+      "display_name": "数据同步延迟校验",
+      "dimension": "timeliness",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则T-D02测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 157,
+      "rule_id": "T-D03",
+      "display_name": "数据加工延迟校验",
+      "dimension": "timeliness",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则T-D03测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 158,
+      "rule_id": "T-E01",
+      "display_name": "临时数据过期校验",
+      "dimension": "timeliness",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则T-E01测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 159,
+      "rule_id": "T-E02",
+      "display_name": "业务数据过期校验",
+      "dimension": "timeliness",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则T-E02测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 160,
+      "rule_id": "T-F01",
+      "display_name": "数据新鲜度校验",
+      "dimension": "timeliness",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则T-F01测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 161,
+      "rule_id": "T-F02",
+      "display_name": "批量数据新鲜度校验",
+      "dimension": "timeliness",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则T-F02测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 162,
+      "rule_id": "T-F03",
+      "display_name": "核心业务数据新鲜度校验",
+      "dimension": "timeliness",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则T-F03测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 163,
+      "rule_id": "T-L01",
+      "display_name": "时间字段合理性校验",
+      "dimension": "timeliness",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则T-L01测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 164,
+      "rule_id": "T-L02",
+      "display_name": "时间先后逻辑校验",
+      "dimension": "timeliness",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则T-L02测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 165,
+      "rule_id": "T-L03",
+      "display_name": "时间与状态一致性校验",
+      "dimension": "timeliness",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则T-L03测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 166,
+      "rule_id": "T-W01",
+      "display_name": "源端到ODS同步时延校验",
+      "dimension": "timeliness",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则T-W01测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 167,
+      "rule_id": "T-W02",
+      "display_name": "ODS到数仓加工时延校验",
+      "dimension": "timeliness",
+      "severity": "MEDIUM",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则T-W02测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 168,
+      "rule_id": "T-W03",
+      "display_name": "分区到达时点校验",
+      "dimension": "timeliness",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则T-W03测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 169,
+      "rule_id": "T-W04",
+      "display_name": "报表发布时间校验",
+      "dimension": "timeliness",
+      "severity": "MEDIUM",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则T-W04测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 170,
+      "rule_id": "T-W05",
+      "display_name": "API缓存新鲜度校验",
+      "dimension": "timeliness",
+      "severity": "MEDIUM",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则T-W05测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 171,
+      "rule_id": "T-W06",
+      "display_name": "增量水位连续性校验",
+      "dimension": "timeliness",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "event_time",
+      "data_flag": "future_time",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "2099-01-01 00:00:00",
+          "reason": "时间晚于允许窗口"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 172,
+      "rule_id": "T-W07",
+      "display_name": "事件到达延迟校验",
+      "dimension": "timeliness",
+      "severity": "MEDIUM",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则T-W07测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 173,
+      "rule_id": "T-W08",
+      "display_name": "历史有效期时效校验",
+      "dimension": "timeliness",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则T-W08测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 174,
+      "rule_id": "T-W09",
+      "display_name": "调度重试时效校验",
+      "dimension": "timeliness",
+      "severity": "MEDIUM",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则T-W09测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 175,
+      "rule_id": "T-W10",
+      "display_name": "元数据更新时效校验",
+      "dimension": "timeliness",
+      "severity": "MEDIUM",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则T-W10测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 176,
+      "rule_id": "WP-T-B01",
+      "display_name": "批次更新时间校验",
+      "dimension": "timeliness",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则WP-T-B01测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 177,
+      "rule_id": "WP-T-D01",
+      "display_name": "数据采集延迟校验",
+      "dimension": "timeliness",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则WP-T-D01测试样例标记未通过"
+        }
+      ],
+      "error": null
+    },
+    {
+      "seq": 178,
+      "rule_id": "WP-T-F01",
+      "display_name": "实时数据新鲜度校验",
+      "dimension": "timeliness",
+      "severity": "HIGH",
+      "entity_type": "TABLE",
+      "target_column": "",
+      "data_flag": "table",
+      "trial_passed": false,
+      "total_rows": 2,
+      "failure_count": 1,
+      "pass_rate": 0.5,
+      "result": "PASS",
+      "invalid_samples": [
+        {
+          "row_index": 1,
+          "value": "{'id': 'FAIL-001', 'id_card': '12345', 'phone': 'abc', 'email': 'bad-email', 'co",
+          "reason": "规则WP-T-F01测试样例标记未通过"
+        }
+      ],
+      "error": null
+    }
+  ]
+}
